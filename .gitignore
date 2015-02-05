@@ -29,3 +29,5 @@ bject files
 *.i*86
 *.x86_64
 .svn
+*~
+contrib

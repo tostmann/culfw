@@ -1,11 +1,1 @@
-U    Devices/CUL/CUL.c
-U    Devices/CUL/board.h
-U    Devices/CUL/makefile
-U    Devices/CCD/CCD.c
-U    Devices/CCD/CCD.hex
-U    Devices/CCD/board.h
-U    Devices/CCD/makefile
-A    clib/kopp-fc.c
-A    clib/kopp-fc.h
- U   .
-Updated to revision 491.
+At revision 494.

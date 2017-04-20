@@ -63,6 +63,7 @@
     <a href="#cmd_U">U</a>
     <a href="#cmd_u">u</a>
     <a href="#cmd_V">V</a>
+    <a href="#cmd_v">v</a>
     <a href="#cmd_W">W</a>
     <a href="#cmd_w">w</a>
     <a href="#cmd_X">X</a>
@@ -888,6 +889,45 @@
       Print the hardware version on CUL_V3 and CUL_V4
     </ul><br><br>
 
+    <a name="cmd_v"></a>
+    v&lt;func&gt;[&lt;hex&gt;]
+    <ul>
+      Honeywell EvoHome/EvoTouch mode.
+      <br>
+      <br>
+      &lt;func&gt; is one of:
+      <ul>
+      <li> l<br>
+        Listen for EvoHome messages.<br>
+        Only EvoHome messages with a valid checksum will be returned in this mode.<br>
+        Messages are reported on receipt as vr&lt;hex&gt; with the valid checksum byte removed.
+      <li> d<br>
+        Listen for EvoHome messages as above, but also report aborted receives as v!&lt;code&gt;[&lt;hex&gt;].<br>
+        This extra information can be useful for debug purpose.<br>
+        Codes include:<br><br>
+        <ul>
+        Interference related<br>
+        <li> F - Framing error, where received data doesn't decode to 1start-8data-1stop at 38,400bps
+        <li> M - Manchester coding error in received data
+        <li> C - Checksum error over completed message<br><br>
+        Firmware problem
+        <li> L - Message exceed expected maximum length<br>
+        <li> O - Overrun, where a second data byte arrived before the ISR processing the first was able to complete
+      </ul>
+      <li> s&lt;hex&gt;<br>
+        Send out an EvoHome message.  No checking is performed on sent data, but a valid checksum
+        is automatically added.
+      <li> <br>
+        Disable EvoHome reception.
+      </ul>
+      <br>
+      Responses<br>
+      <ul>
+      <li>va - Successful acknowledgement to request
+      <li>vb - Attempt to send whilst device busy receiving a message (small timing window, just retry)
+      <li>v? - Unknown command
+      </ul>
+    </ul><br><br>
 
     <a name="cmd_W"></a>
     W&lt;AA&gt;&lt;DD&gt; or W&lt;AAAA&gt;&lt;DD&gt;

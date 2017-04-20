@@ -268,7 +268,34 @@ Pigator_Module_t modules[] = {
   },
 
   {
+    .Magic           = "GSM_A6",
+    .Baud            = 115200,
+    .cb_mod_init     = pig_serialfwd_init,
+    .cb_mod_task     = pig_serialfwd_task,
+    .cb_mod_reset    = pig_reset_low,
+    .cb_mod_bootload = NULL,
+  },
+
+  {
+    .Magic           = "RN2483",
+    .Baud            = 57600,
+    .cb_mod_init     = pig_serialfwd_init,
+    .cb_mod_task     = pig_serialfwd_task,
+    .cb_mod_reset    = pig_reset_low,
+    .cb_mod_bootload = NULL,
+  },
+
+  {
     .Magic           = "DS2480",
+    .Baud            = 9600,
+    .cb_mod_init     = pig_serialfwd_init,
+    .cb_mod_task     = pig_serialfwd_task,
+    .cb_mod_reset    = pig_reset_low,
+    .cb_mod_bootload = NULL,
+  },
+
+  {
+    .Magic           = "NMEA9600",
     .Baud            = 9600,
     .cb_mod_init     = pig_serialfwd_init,
     .cb_mod_task     = pig_serialfwd_task,

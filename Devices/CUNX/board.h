@@ -88,7 +88,7 @@
 #define W5500_CS_PORT         PORTD
 #define W5500_CS_PIN          PIN0_bm
 
-#define HAS_MQTT
+#define _HAS_MQTT
 
 #define CUL_HW_REVISION       "CUNX_V1"
 
